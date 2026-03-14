@@ -1,19 +1,21 @@
-FSR Force Estimation with Linear Interpolation
+#*FSR Force Estimation with Linear Interpolation*
 
 This function utilizes known values from the manufacturer manual to approximate the Force-Voltage curve. By using linear interpolation to estimate values between data points, we eliminate the need for complex logarithmic calculations.
 
 Implementation: The sensor integration follows the methodology described in:
 "Design and Implementation of a Low-Cost Foot Pressure Sensor for Lower-Limb Exoskeletons: The Case of HERMES EXO"
 
-System Specifications
+#*System Specifications*
 
 Input: Pin number of the FSR (Force Sensitive Resistor) sensor.
 Output: Force reading from 0 to 10,000 (representing a range of 0kg to 10kg).
 
-Function Specifications
+#*Function Specifications*
 
-Two functions have been implemented: the interpolate function with input a double variable that describes the voltage and returns the corresponding pressure in grams,
-and the Read_FSR, input the pin that samples the FSR, output the output of the interpolation function. These functions are in the read_fsr.cpp file and are instantiated through the header file in the inlude folder.
+Two functions have been implemented: 
 
-The main is an example that reads the values of two fsr sensors and add the results for a total weight.
+Firstly, the interpolate_vol_to_grams function with input a double variable that describes the voltage and returns the corresponding pressure in grams. This function is in the read_fsr.cpp file and is instantiated through the header file in the include folder.
 
+Also, the Read_FSR function in main.cpp, which takes the pin that samples the FSR as input and outputs the result of the interpolation function. 
+
+The main function is an example that reads the values of two FSR sensors and adds the results to calculate a total weight.

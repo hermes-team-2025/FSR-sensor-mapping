@@ -2,7 +2,7 @@
 #include "read_fsr.h"
 
 // Linear Interpolation Function
-double interpolate(double x) {
+double interpolate_vol_to_grams(double x) {
   double x_points[] = {
       0, 2060.2, 2479.5, 3666.7, 6669.9, 7228.5, 8381.2, 8974.6, 
       9498.8, 10162.6, 10547.1, 11036.8, 11491.4, 11877.1, 12122.4, 12228.5, 
@@ -40,18 +40,4 @@ double interpolate(double x) {
     }
   }
   return 0;
-}
-
-//This function takes the pin of the FSR sensor
-//and returns the 
-double Read_FSR(const int sensor_pin) {
-  int rawADC = analogRead(sensor_pin);
-  
-  // double currentX = (rawADC * 3.3) / 4095.0;
-
-  double currentX = (rawADC * 3.3);
-
-  //double pressure = interpolate(currentX);
-
-  return interpolate(currentX);
 }
